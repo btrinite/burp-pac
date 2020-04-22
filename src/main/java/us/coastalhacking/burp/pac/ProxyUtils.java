@@ -80,6 +80,13 @@ public class ProxyUtils {
           server.setEnabled(true);
           server.setProxyHost(address.getHostString());
           server.setProxyPort(address.getPort());
+          String username = System.getenv("BURP_PROXY_USERNAME");
+          String password = System.getenv("BURP_PROXY_PASSWORD");
+          if (username != null) {
+            server.setUsername(username);
+            server.setPassword(password);
+            server.setAuthType("basic");  
+          }
           callbacks.printOutput(String.format("Server '%s' is HTTP", server));
         } else {
           final String type =

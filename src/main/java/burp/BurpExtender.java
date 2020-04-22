@@ -50,5 +50,15 @@ public class BurpExtender implements IBurpExtender {
     ITab tab = injector.getInstance(ITab.class);
     callbacks.addSuiteTab(tab);
     callbacks.setExtensionName(EXTENSION_NAME);
+
+    String username = System.getenv("BURP_PROXY_USERNAME");
+    String password = System.getenv("BURP_PROXY_PASSWORD");
+    if (username != null) {
+      callbacks.printOutput(String.format("Env BURP_PROXY_USERNAME is set to %s",username));
+    
+    }
+    if (password != null) {
+      callbacks.printOutput(String.format("Env BURP_PROXY_PASSWORD is set"));
+    }  
   }
 }

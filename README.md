@@ -32,6 +32,12 @@ It also will automatically enable "Project options" &rarr; "Upstream Proxy Serve
 "Override user options" due to limitations in the Burp Extender API. It [currently][bug_13]
 does not reset this value.
 
+Q: _Does this extension allow peroxy authentication
+
+A: Yes, this is the prupose of this fork. A very limited but simple basic authentification support.
+If env var BURP_PROXY_USERNAME exist, then each time this extension decides to add a proxy in the project configuration, this proxy will be set
+with authentification type Basic, and credentials will be retrieved from env BURP_PROXY_USERNAME and BURP_PROXY_PASSWORD.
+
 ## Comparison to Other Burp PAC Extensions
 
 ### ["Proxy PAC"][proxypac]  
