@@ -37,7 +37,8 @@ Q: _Does this extension allow peroxy authentication
 A: Yes, this is the prupose of this fork. A very limited but simple basic authentification support.
 If env var BURP_PROXY_USERNAME exist, then each time this extension decides to add a proxy in the project configuration, this proxy will be set
 with authentification type Basic, and credentials will be retrieved from env BURP_PROXY_USERNAME and BURP_PROXY_PASSWORD.
-
+For Linux, this is ```export export URP_PROXY_USERNAME="blablabla"```
+For OSX, this is ```launchctl setenv URP_PROXY_USERNAME "blablabla"```
 ## Comparison to Other Burp PAC Extensions
 
 ### ["Proxy PAC"][proxypac]  
